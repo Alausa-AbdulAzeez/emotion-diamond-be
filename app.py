@@ -75,8 +75,12 @@ def extract_frames(video_path):
     os.makedirs(frames_folder, exist_ok=True)
 
     # Extract 1 frame per second using ffmpeg
-    command = f"ffmpeg -i {video_path} -vf fps=1 {frames_folder}/frame_%04d.jpg"
-    run(command, shell=True)
+    command = f"ffmpeg -i {video_path} -vf format=yuv420p,fps=1 {frames_folder}/frame_%04d.jpg"
+    # command = f"ffmpeg -i {video_path} -vf fps=1 {frames_folder}/frame_%04d.jpg"
+    # run(command, shell=True)
+    result = run(command, shell=True, capture_output=True, text=True)
+    print(result.stdout)
+    print(result.stderr)
     
     return frames_folder
 
