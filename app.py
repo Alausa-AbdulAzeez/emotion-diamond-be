@@ -1,4 +1,5 @@
 from flask import Flask, request, jsonify
+from flask_cors import CORS
 import os
 import cv2
 import glob
@@ -9,6 +10,7 @@ from subprocess import run
 
 
 app = Flask(__name__)
+CORS(app)  # Enables CORS for all routes
 
 # Create upload and frames directory
 UPLOAD_FOLDER = 'uploads'
