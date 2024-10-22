@@ -10,6 +10,7 @@ from subprocess import run
 
 
 app = Flask(__name__)
+application = app
 CORS(app)  # Enables CORS for all routes
 
 # Create upload and frames directory
