@@ -15,9 +15,8 @@ from time import time
 
 app = Flask(__name__)
 application = app
-CORS(app)  # Enables CORS for all routes
 
-CORS(app, resources={r"/*": {"origins": ["http://localhost:5173", "https://emotion-diamond-fe.vercel.app"]}})
+CORS(app, resources={r"/*": {"origins": ["http://localhost:5173", "https://emotion-diamond-fe.vercel.app", "https://emotion-diamond-fe.vercel.app/" , "http://emotion-diamond-fe.vercel.app" , "http://emotion-diamond-fe.vercel.app/" ]}})
 
 
 # Create upload and frames directory
