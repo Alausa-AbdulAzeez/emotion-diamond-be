@@ -66,12 +66,12 @@ def analyze_video():
         # Clean up as soon as possible
         clean_up(video_path, frames_folder)
         
+        print(f"Total processing time: {time() - start:.2f} seconds")
         return jsonify({
             "status": "success",
             "message": "Video analysis completed",
             "data": {"averaged_emotions": averaged_emotions}
         }), 200
-        print(f"Total processing time: {time() - start:.2f} seconds")
 
     except Exception as e:
         # Ensure cleanup happens even if processing fails
